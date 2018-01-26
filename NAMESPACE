@@ -1,3 +1,5 @@
 useDynLib(leeplyr, .registration=TRUE)
 exportPattern("^[[:alpha:]]+")
 importFrom(Rcpp, evalCpp)
+importFrom(sp, point.in.polygon)
+import(readr)

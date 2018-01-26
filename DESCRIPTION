@@ -7,6 +7,14 @@ Author: Daniel Fürth
 Maintainer: Daniel Fürth <furth@cshl.edu>
 Description: A set of internal Lee lab tools ("plyers") for exploring and wrangling FISSEQ data.
 License: GPL (>= 2)
+Depends:
+    Rcpp (>= 0.12.14),
+    sp,
+    readr
+Imports:
+    Rcpp (>= 0.12.14),
+    sp,
+    readr
 Imports: Rcpp (>= 0.12.14), sp, readr
 LinkingTo: Rcpp, sp, readr
 RoxygenNote: 6.0.1.9000
