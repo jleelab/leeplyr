@@ -55,9 +55,9 @@ plot.polygon<-function(dataframe, col){
 #' @param cex numeric, Size of transcripts on plot showing alll transcripts. Default is 0.2. 
 #' @export
 #' @examples
-#' cytosol.folder<-system.file('data/roi/RoiSet_cytosol', package='leeplyr')
-#' nuclei.folder<-system.file('data/roi/RoiSet_nuclei', package='leeplyr')
-#' transcripts<-system.file('data/fisseq/res_001_001FISSEQ.out', package='leeplyr')
+#' cytosol.folder<-system.file('roi/RoiSet_cytosol', package='leeplyr')
+#' nuclei.folder<-system.file('roi/RoiSet_nuclei', package='leeplyr')
+#' transcripts<-system.file('fisseq/res_001_001FISSEQ.out', package='leeplyr')
 #' map.to.roi(transcripts, roi.folder = c(cytosol.folder, nuclei.folder), roi.labels =  c('cytoplasm', 'nucleus'), OR.cutoff = 5, p.value.cutoff = 20)
 map.to.roi<-function(transcripts, roi.folder = c(cytosol.folder, nuclei.folder), roi.labels =  c('cytoplasm', 'nucleus'), OR.cutoff = 5, p.value.cutoff = 20, plot = TRUE, roi.col = c('#C8EAEB', '#FCDAD1'), transcript.col = 'black', cex = 0.2){
   #read ROIs
@@ -75,7 +75,7 @@ map.to.roi<-function(transcripts, roi.folder = c(cytosol.folder, nuclei.folder),
   ylim<-append(ylim, range(amplicons$centroid_x) )
   ylim<-range(ylim)
   xlim<-range(xlim)
-  cat('LOADED transcripts .tsv file')
+  cat('LOADED transcripts .tsv file \n')
   #check in polygon
   check.inside<-list()
   for(i in seq_along(roi.folder) ){
