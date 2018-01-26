@@ -16,8 +16,8 @@ library(leeplyr)
 ```
 Try out some commands:
 ```
-cytosol.folder<-system.file('data/roi/RoiSet_cytosol', package='leeplyr')
-nuclei.folder<-system.file('data/roi/RoiSet_nuclei', package='leeplyr')
-transcripts<-system.file('data/fisseq/res_001_001FISSEQ.out', package='leeplyr')
-map.to.roi(transcripts, roi.folder = c(cytosol.folder, nuclei.folder), roi.labels =  c('cytoplasm', 'nucleus'), OR.cutoff = 5, p.value.cutoff = 20)
+cytosol.folder<-system.file('roi/RoiSet_cytosol', package='leeplyr')
+nuclei.folder<-system.file('roi/RoiSet_nuclei', package='leeplyr')
+transcripts<-system.file('fisseq/res_001_001FISSEQ.out', package='leeplyr')
+mapped<-map.to.roi(transcripts, roi.folder = c(cytosol.folder, nuclei.folder), roi.labels =  c('cytoplasm', 'nucleus'), OR.cutoff = 5, p.value.cutoff = 20)
 ```

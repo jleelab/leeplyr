@@ -32,8 +32,8 @@ map.to.roi(transcripts, roi.folder = c(cytosol.folder, nuclei.folder),
 Maps each individual transcripts to one or more region of interests (ROIs).
 }
 \examples{
-cytosol.folder<-system.file('data/roi/RoiSet_cytosol', package='leeplyr')
-nuclei.folder<-system.file('data/roi/RoiSet_nuclei', package='leeplyr')
-transcripts<-system.file('data/fisseq/res_001_001FISSEQ.out', package='leeplyr')
+cytosol.folder<-system.file('roi/RoiSet_cytosol', package='leeplyr')
+nuclei.folder<-system.file('roi/RoiSet_nuclei', package='leeplyr')
+transcripts<-system.file('fisseq/res_001_001FISSEQ.out', package='leeplyr')
 map.to.roi(transcripts, roi.folder = c(cytosol.folder, nuclei.folder), roi.labels =  c('cytoplasm', 'nucleus'), OR.cutoff = 5, p.value.cutoff = 20)
 }
