@@ -4,7 +4,7 @@
 \alias{plot.polygon}
 \title{Plot polygon}
 \usage{
-plot.polygon(dataframe, col)
+\method{plot}{polygon}(dataframe, col)
 }
 \arguments{
 \item{dataframe}{data frame, a polygon data frame with list items x, y, and id.}
