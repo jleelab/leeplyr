@@ -70,12 +70,16 @@ map.to.roi<-function(transcripts, roi.folder = c(cytosol.folder, nuclei.folder),
     ylim<-append(ylim, range(rois[[i]]$y) )
   }
   #read transcripts
-  amplicons <- read_delim(transcripts, "\t", escape_double = FALSE, trim_ws = TRUE)
+  if(class(transcripts)=='character'){
+    amplicons <- read_delim(transcripts, "\t", escape_double = FALSE, trim_ws = TRUE)
+  }else{
+    amplicons <- transcripts
+  }
   xlim<-append(xlim, range(amplicons$centroid_y) )
   ylim<-append(ylim, range(amplicons$centroid_x) )
   ylim<-range(ylim)
   xlim<-range(xlim)
-  cat('LOADED transcripts .tsv file \n')
+  cat('Assigning transcripts to polygons... \n')
   #check in polygon
   check.inside<-list()
   for(i in seq_along(roi.folder) ){
