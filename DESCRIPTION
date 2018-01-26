@@ -1,7 +1,7 @@
 Package: leeplyr
 Type: Package
 Title: A set of internal Lee lab tools ("plyers").
-Version: 0.1
+Version: 0.12
 Date: 2018-01-25
 Author: Daniel Fürth
 Maintainer: Daniel Fürth <furth@cshl.edu>
