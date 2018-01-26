@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "Package: leeplyr\nType: Package\nTitle: A set of internal Lee lab tools (\"plyers\").\nVersion: 0.1\nDate: 2018-01-25\nAuthor: Daniel Fürth\nMaintainer: Daniel Fürth <furth@cshl.edu>\nDescription: A set of internal Lee lab tools (\"plyers\") for exploring and wrangling FISSEQ data.\nLicense: GPL (>= 2)\nImports: Rcpp (>= 0.12.14), sp, readr\nLinkingTo: Rcpp, sp, readr\nRoxygenNote: 6.0.1.9000\n",
+    "created" : 1516917446021.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1260589904",
+    "id" : "4D5F421F",
+    "lastKnownWriteTime" : 1516920167,
+    "last_content_update" : 1516920167459,
+    "path" : "~/Documents/GitHub/leeplyr/DESCRIPTION",
+    "project_path" : "DESCRIPTION",
+    "properties" : {
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "dcf"
+}
