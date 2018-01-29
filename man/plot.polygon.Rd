@@ -4,12 +4,14 @@
 \alias{plot.polygon}
 \title{Plot polygon}
 \usage{
-plot.polygon(dataframe, col)
+plot.polygon(dataframe, col = NA, border = "black")
 }
 \arguments{
 \item{dataframe}{data frame, a polygon data frame with list items x, y, and id.}
 
-\item{col}{character, fill color for polygon. character}
+\item{col}{character, fill color for polygon. Default, NA, is to leave polygons unfilled.}
+
+\item{border}{character, the color to draw the border. The default is 'black'.}
 }
 \description{
 Draws polygon for a polygon data frame.

@@ -29,15 +29,16 @@ get.rois<-function(folder){
 #'
 #' Draws polygon for a polygon data frame.
 #' @param dataframe data frame, a polygon data frame with list items x, y, and id.
-#' @param col character, fill color for polygon. character
+#' @param col character, fill color for polygon. Default, NA, is to leave polygons unfilled.
+#' @param border character, the color to draw the border. The default is 'black'.
 #' @keywords polygon
 #' @export
 #' @examples
 #' cytosol<-get.rois(cytosol.folder)
 #' plot(cytosol[,1:2], col = 0)
 #' plot.polygon(cytosol, col='pink')
-plot.polygon<-function(dataframe, col){
-  lapply(unique(dataframe$id), function(x){polygon(dataframe$x[dataframe$id==x], dataframe$y[dataframe$id==x], col=col)})
+plot.polygon<-function(dataframe, col = NA, border = 'black'){
+  lapply(unique(dataframe$id), function(x){polygon(dataframe$x[dataframe$id==x], dataframe$y[dataframe$id==x], col=col, border = border)})
 }
 
 

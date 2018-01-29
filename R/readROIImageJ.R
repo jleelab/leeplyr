@@ -322,3 +322,4 @@ read.ijroi <- function(file, verbose=FALSE) {
 ## ##         roi2.setFillColor(roi.getFillColor());
 ## ##         return roi2;
 ## ##     }
+
