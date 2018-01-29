@@ -481,9 +481,9 @@ angle.distance<-function(alpha, beta) {
 #' @export
 #' @examples
 #' nuclei.folder<-system.file('roi/RoiSet_nuclei', package='leeplyr')
-#' contour<-get.rois(nuclei.folder)
+#' contours<-get.rois(nuclei.folder)
 #' transcripts<-system.file('fisseq/res_001_001FISSEQ.out', package='leeplyr')
-#' polarity<-map.to.polarity(transcripts, contour, plot = TRUE)
+#' polarity<-map.to.polarity(transcripts, contours, plot = TRUE)
 map.to.polarity<-function(transcripts, contour, plot = TRUE){
   
   #read transcripts
@@ -507,7 +507,7 @@ map.to.polarity<-function(transcripts, contour, plot = TRUE){
   points(amplicons$centroid_y[check.inside==0], amplicons$centroid_x[check.inside==0], pch=16, cex=0.5, col='pink')
   mtext('ROIs', 3, col='black')
   box()
-  plot(cbind(amplicons$centroid_y, amplicons$centroid_x), col=gray(PC1dist), type='n', ylim=rev(ylim), xlim=xlim, xlab='', ylab='', axes=F, asp=1)
+  plot(cbind(amplicons$centroid_y, amplicons$centroid_x), type='n', ylim=rev(ylim), xlim=xlim, xlab='', ylab='', axes=F, asp=1)
   plot.polygon(contour, border = 'black')
   mtext('PCA', 3, col='black')
   box()
