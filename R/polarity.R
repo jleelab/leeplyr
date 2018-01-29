@@ -502,7 +502,6 @@ map.to.polarity<-function(transcripts, contour, plot = TRUE){
     check.inside<-check.inside+ j*(point.in.polygon(amplicons$centroid_y, amplicons$centroid_x, contour[which(contour$id == j), 1], contour[which(contour$id == j), 2])>0)
   }
 
-  layout()
   par(mfrow=c(2,5), mar=c(2,2,4,2))
   plot(amplicons$centroid_y, amplicons$centroid_x, pch=16, cex=0.5, col=check.inside, ylim=rev(ylim), xlim=xlim, xlab='', ylab='', asp=1, axes=FALSE)
   points(amplicons$centroid_y[check.inside==0], amplicons$centroid_x[check.inside==0], pch=16, cex=0.5, col='pink')
