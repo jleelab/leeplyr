@@ -525,7 +525,7 @@ map.to.polarity<-function(transcripts, contour, plot = TRUE){
     smooth.contour<-rbind(smooth.contour, rbind(smooth.contour[nrow(smooth.contour),], smooth.contour[1,] ) )
     smooth.contour<-cbind(smooth.spline(smooth.contour[,1])$y, smooth.spline(smooth.contour[,2])$y)
     
-    principal.axes[[i]]<-getPrincipalAxes(smooth.contour, plot=FALSE)
+    principal.axes[[i]]<-getPrincipalAxes(smooth.contour, plot=TRUE)
     
     p<-matrix(rep(0,8), ncol=2)
     p<-getIntersectwithContour(smooth.contour,  principal.axes[[i]]$PC1)
@@ -643,4 +643,55 @@ map.to.polarity<-function(transcripts, contour, plot = TRUE){
   
  
   return(output)
+  
 }
+
+#PC1.gene<-output$PC1dist
+#PC2.gene<-output$PC2dist
+
+#C5<-(PC1.gene<0.75 & PC1.gene>0.25 & 0.25< PC2.gene & PC2.gene <0.75)
+#C1<-( (PC1.gene<0.25 | PC1.gene>0.75) & 0.25< PC2.gene & PC2.gene <0.75)
+
+#gene.symbols<-unique(output$gene.symbol)
+#OR<-rep(NA, length(gene.symbols))
+#p.value<-rep(NA, length(gene.symbols))
+#for(k in unique(output$gene.symbol)){
+ # N<-table(output$gene.symbol == k, C1)
+  #if(!is.null(dim(N))){
+   # OR[which(gene.symbols == k)] <- fisher.test(N)$estimate
+   # p.value[which(gene.symbols == k)] <- fisher.test(N)$p.value
+  #}
+#}
+# 
+# p.value[which(p.value==0)]<-as.numeric( noquote(unlist(format(.Machine)))[3] )
+# 
+# interesting<-which(abs(log2(OR))> 1 & -log10(p.value)> 1)
+# 
+# ofvalue<-cbind(as.character(gene.symbols), log2(OR), -log10(p.value))[interesting,]
+# ofvalue[order(ofvalue[,2]),]
+# 
+# plot(log2(OR), -log10(p.value))
+# 
+# fisher.test(C5, output$gene.symbols)
+# 
+# par(mfrow=c(1,5))
+# plot(log2(OR), -log10(p.value), pch=16, col=rgb(0.1,0.1,0.1,0.5), axes=F, xlim=c(-5,5))
+# axis(2, las=1)
+# axis(1)
+# abline(v=0)
+# text(log2(OR)[which(gene.symbols=='RRP9')], -log10(p.value)[which(gene.symbols=='RRP9')], 'RRP9', pos=1)
+# text(log2(OR)[which(gene.symbols=='GRAMD1B')], -log10(p.value)[which(gene.symbols=='GRAMD1B')], 'GRAMD1B', pos=1)
+# 
+# 
+# interest<-'RRP9'
+# plot(amplicons$centroid_y[which(amplicons$string_gene_symbols == interest)], amplicons$centroid_x[which(amplicons$string_gene_symbols == interest)], pch=16, cex=0.5, type='n', xlab='', ylab='', ylim=rev(ylim), main=interest, asp=1)
+# points(amplicons$centroid_y, amplicons$centroid_x, col='pink', pch=16, cex=0.5, )
+# points(amplicons$centroid_y[which(amplicons$string_gene_symbols == interest)], amplicons$centroid_x[which(amplicons$string_gene_symbols == interest)], col='blue', pch=16, cex=0.5, )
+# plot.polygon(contours)
+# 
+# interest<-'GRAMD1B'
+# plot(amplicons$centroid_y[which(amplicons$string_gene_symbols == interest)], amplicons$centroid_x[which(amplicons$string_gene_symbols == interest)], pch=16, cex=0.5, type='n', xlab='', ylab='', ylim=rev(ylim), main=interest, asp=1)
+# points(amplicons$centroid_y, amplicons$centroid_x, col='pink', pch=16, cex=0.5, )
+# points(amplicons$centroid_y[which(amplicons$string_gene_symbols == interest)], amplicons$centroid_x[which(amplicons$string_gene_symbols == interest)], col='blue', pch=16, cex=0.5, )
+# plot.polygon(contours)
+# 

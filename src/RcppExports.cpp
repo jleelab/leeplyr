@@ -16,8 +16,11 @@ BEGIN_RCPP
 END_RCPP
 }
 
+RcppExport SEXP CoherentPointDriftRegistration(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
+
 static const R_CallMethodDef CallEntries[] = {
     {"_leeplyr_rcpp_hello_world", (DL_FUNC) &_leeplyr_rcpp_hello_world, 0},
+    {"CoherentPointDriftRegistration", (DL_FUNC) &CoherentPointDriftRegistration, 9},
     {NULL, NULL, 0}
 };
 
